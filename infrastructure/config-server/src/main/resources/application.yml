@@ -1,0 +1,14 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    active: native
+    cloud:
+      config:
+        server:
+          native:
+            # messages 폴더 안의 파일들을 찾도록 경로 지정
+            search-locations: classpath:/messages
