@@ -1,0 +1,13 @@
+server:
+  port: 8000
+
+eureka:
+  client:
+    register-with-eureka: false   # 이 Gateway 자신도 Eureka에 서비스로 등록
+    fetch-registry: false         # Eureka에서 다른 서비스 목록을 가져옴 (lb:// 라우팅에 필요)
+    service-url:
+      defaultZone: http://localhost:8761/eureka  # Eureka 서버 주소
+
+spring:
+  application:
+    name: api-gateway  # Eureka에 등록될 이 서비스의 이름

@@ -1,7 +1,10 @@
 rootProject.name = 'msa-service'
 
 // 1. 공통 모듈
-include 'common-module'
+include 'common:common-logging'
+include 'common:common-web'
+include 'common:common-core'
+include 'common:common-jpa'
 
 // 2. 인프라 모듈
 include 'infrastructure:config-server' // 설정 파일 관리
@@ -10,6 +13,3 @@ include 'infrastructure:discovery-service' // 어떤 서비스가 어느 IP와 �
 
 // 3. 비즈니스 모듈
 include 'business:image-converter-module'
-include 'business:image-converter-module'
-findProject(':business:image-converter-module')?.name = 'image-converter-module'
-

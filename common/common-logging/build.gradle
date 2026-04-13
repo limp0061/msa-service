@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library' // 다른 모듈에서 이 모듈의 클래스를 참조할 수 있게 해준다
+}
+
+// 라이브러리 전용 설정 (실행 가능한 Jar를 만들지 않음)
+bootJar { enabled = false }
+jar { enabled = true }
+
+
+dependencies {
+    /*===============
+        Logstash
+    ===============*/
+    api 'net.logstash.logback:logstash-logback-encoder:8.1'
+}
