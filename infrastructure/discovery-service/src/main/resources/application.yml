@@ -1,0 +1,18 @@
+server:
+  port: 8761  # Eureka의 표준 포트
+
+spring:
+  application:
+    name: discovery-service
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    # 1. 서버 자신을 자기 자신에게 등록하지 않음
+    register-with-eureka: false
+    # 2. 다른 서비스 정보를 가져올 필요가 없음
+    fetch-registry: false
+    service-url:
+      # 대시보드 및 통신을 위한 기본 주소 설정
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/

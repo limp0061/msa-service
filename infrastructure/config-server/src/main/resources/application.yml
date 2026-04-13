@@ -6,9 +6,14 @@ spring:
     name: config-server
   profiles:
     active: native
-    cloud:
-      config:
-        server:
-          native:
-            # messages 폴더 안의 파일들을 찾도록 경로 지정
-            search-locations: classpath:/messages
+  cloud:
+    config:
+      server:
+        native:
+          - classpath:/config-repo/
+          - classpath:/config-repo/messages/
+
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
